@@ -1,4 +1,4 @@
-package com.example.ermay.myapplication;
+package pennappsf18.mega.telemed;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

@@ -1,4 +1,4 @@
-package com.example.ermay.myapplication;
+package pennappsf18.mega.telemed;
 
 import org.junit.Test;
 
