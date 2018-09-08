@@ -5,33 +5,34 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:title="Home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_add_medical_issue"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Add Medical Issue" />
+        <item
+            android:id="@+id/nav_my_medical_issues"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="My Medical Issues" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_people_in_need"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="People In Need" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_found_person"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Found Missing Person?" />
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Are you a Doctor?">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_sign_in"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Sign In / Register" />
         </menu>
     </item>
 
