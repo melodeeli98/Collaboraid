@@ -1,5 +1,6 @@
 package pennappsf18.mega.telemed;
 
+import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -87,37 +88,12 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
 
-        displaySelectedScreen(item.getItemId());
-
-        /**
-        int id = item.getItemId();
-
-        Fragment fragment = null;
-
-        if (id == R.id.nav_add_medical_issue) {
-            fragment = new AddMedicalIssue();
-        } else if (id == R.id.nav_my_medical_issues) {
-
-        } else if (id == R.id.nav_people_in_need) {
-
-        } else if (id == R.id.nav_found_person) {
-
-        } else if (id == R.id.nav_sign_in) {
-
-        } else if (id == R.id.nav_home) {
-            fragment = new HomeFragment();
-        }
-        if (fragment != null)
-        {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, fragment);
-            ft.commit();
+        if (item.getItemId() == R.id.nav_add_medical_issue) {
+            // TODO
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        else displaySelectedScreen(item.getItemId());
 
-         **/
         return true;
     }
 
@@ -129,9 +105,6 @@ public class MainActivity extends AppCompatActivity
         switch (itemId) {
             case R.id.nav_home:
                 fragment = new HomeFragment();
-                break;
-            case R.id.nav_add_medical_issue:
-                fragment = new AddMedicalIssue();
                 break;
         }
 
