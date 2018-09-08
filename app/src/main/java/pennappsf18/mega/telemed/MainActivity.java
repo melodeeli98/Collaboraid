@@ -1,6 +1,7 @@
 package pennappsf18.mega.telemed;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
 
         if (item.getItemId() == R.id.nav_add_medical_issue) {
-            // TODO
+            startActivity(new Intent(MainActivity.this, AddMedicalIssueActivity.class));
         }
 
         else displaySelectedScreen(item.getItemId());

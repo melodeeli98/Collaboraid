@@ -19,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddMedicalIssueActivity"
+            android:label="@string/title_activity_add_medical_issue"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pennappsf18.mega.telemed.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
