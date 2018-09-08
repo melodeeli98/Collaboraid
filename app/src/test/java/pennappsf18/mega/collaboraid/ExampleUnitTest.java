@@ -1,4 +1,4 @@
-package pennappsf18.mega.telemed;
+package pennappsf18.mega.collaboraid;
 
 import org.junit.Test;
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Telemed</string>
+    <string name="app_name">CollaborAid</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -15,5 +15,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="header_disclaimer">Request Aid</string>
     <string name="body_disclaimer">Fill out the following forms to request medical advice from medical experts around the workd.</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>
