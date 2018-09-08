@@ -93,19 +93,33 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this, AddMedicalIssueActivity.class));
         }
 
+        else if (item.getItemId() == R.id.nav_found_person) {
+            // TODO
+        }
+
+        else if (item.getItemId() == R.id.nav_sign_in) {
+            // TODO
+        }
+
         else displaySelectedScreen(item.getItemId());
 
         return true;
     }
 
     private void displaySelectedScreen(int itemId) {
-        //creating fragment object
+        //        //creating fragment object
         Fragment fragment = null;
 
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_home:
                 fragment = new HomeFragment();
+                break;
+            case R.id.nav_my_medical_issues:
+                fragment = new MyMedicalIssuesFragment();
+                break;
+            case R.id.nav_people_in_need:
+                fragment = new PeopleInNeedFragment();
                 break;
         }
 
