@@ -13,7 +13,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -24,7 +23,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class AddMedicalIssueFragment extends Fragment {
 
@@ -72,13 +71,16 @@ public class AddMedicalIssueFragment extends Fragment {
 
                 imageView.setImageBitmap(bitmap);
 
+                Integer randomNum = ThreadLocalRandom.current().nextInt(0, 10000 + 1);
+                String imageFileName = randomNum.toString() + ".jpg";
+
                 FirebaseStorage storage = FirebaseStorage.getInstance();
                 // Create a storage reference from our app
                 StorageReference storageRef = storage.getReferenceFromUrl("gs://collaboraid-edeba.appspot.com");
                 //Create a reference to "imageRef.jpg"
-                StorageReference imageRef = storageRef.child("imageRef.jpg");
+                StorageReference imageRef = storageRef.child(imageFileName);
                 // Create a reference to 'images/imageRef.jpg'
-                StorageReference ImagesRef = storageRef.child("images/imageRef.jpg");
+                StorageReference ImagesRef = storageRef.child("images/" + imageFileName);
                 // While the file names are the same, the references point to different files
                 imageRef.getName().equals(ImagesRef.getName());    // true
                 imageRef.getPath().equals(ImagesRef.getPath());    // false
@@ -96,6 +98,7 @@ public class AddMedicalIssueFragment extends Fragment {
                 uploadTask.addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception exception) {
+                        System.out.println("sadness");
                         // Handle unsuccessful uploads
                     }
                 }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {

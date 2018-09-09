@@ -75,29 +75,14 @@ public class AddMedicalIssueActivity extends AppCompatActivity {
         EditText longDesc = findViewById(R.id.editText2);
         String longDescStr = longDesc.getText().toString();
 
-        RadioGroup ageRange = findViewById(R.id.Age);
-        int ageRangeId = ageRange.getCheckedRadioButtonId();
-        RadioButton ageRangeBtn = (RadioButton) findViewById(ageRangeId);
-        String ageRangeStr = ageRangeBtn.getText().toString();
-
-        RadioGroup sex = findViewById(R.id.Sex);
-        int sexId = sex.getCheckedRadioButtonId();
-        RadioButton sexBtn = (RadioButton) findViewById(sexId);
-        String sexStr = sexBtn.getText().toString();
-
-        RadioGroup urgent = findViewById(R.id.Urgent);
-        int urgentId = urgent.getCheckedRadioButtonId();
-        RadioButton urgentBtn = (RadioButton) findViewById(urgentId);
-        String urgentStr = urgentBtn.getText().toString();
 
         ImageView imageView = findViewById(R.id.imageView);
         Bitmap bm = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
         
-        MainActivity.docs.add(new Document(nameStr, ageRangeStr, sexStr, shortDescStr,
-                longDescStr, bm, urgentStr));
+        MainActivity.docs.add(new Document(nameStr, "", "", shortDescStr,
+                longDescStr, bm, ""));
 
         super.onBackPressed();
-        return;
     }
 }
 /*
