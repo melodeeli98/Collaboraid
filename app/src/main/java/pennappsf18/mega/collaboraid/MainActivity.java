@@ -3,6 +3,7 @@ package pennappsf18.mega.collaboraid;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -30,9 +31,9 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
-                displaySelectedScreen(R.id.nav_add_medical_issue);
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+                //displaySelectedScreen(R.id.nav_add_medical_issue);
             }
         });
 
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
 
         if (item.getItemId() == R.id.nav_add_medical_issue) {
-            //startActivity(new Intent(MainActivity.this, AddMedicalIssueActivity.class));
+            startActivity(new Intent(MainActivity.this, AddMedicalIssueActivity.class));
         }
 
         else if (item.getItemId() == R.id.nav_found_person) {
