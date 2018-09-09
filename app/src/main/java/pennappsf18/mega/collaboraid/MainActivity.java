@@ -82,9 +82,13 @@ public class MainActivity extends AppCompatActivity
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
         }
-
         else if (item.getItemId() == R.id.nav_sign_in) {
             // TODO
+        }
+        else if (item.getItemId() == R.id.nav_people_in_need) {
+            startActivity(new Intent(MainActivity.this, PeopleInNeedActivity.class));
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
         }
 
         else displaySelectedScreen(item.getItemId());
@@ -103,9 +107,6 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_my_medical_issues:
                 fragment = new MyMedicalIssuesFragment();
-                break;
-            case R.id.nav_people_in_need:
-                fragment = new PeopleInNeedFragment();
                 break;
         }
 

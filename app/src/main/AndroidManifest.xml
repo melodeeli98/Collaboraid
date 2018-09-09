@@ -33,6 +33,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pennappsf18.mega.collaboraid.MainActivity" />
         </activity>
+        <activity android:name=".PeopleInNeedActivity"></activity>
     </application>
 
 </manifest>

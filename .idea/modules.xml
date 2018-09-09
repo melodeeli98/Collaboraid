@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Collaboraid.iml" filepath="$PROJECT_DIR$/Collaboraid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Telemed.iml" filepath="$PROJECT_DIR$/Telemed.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
