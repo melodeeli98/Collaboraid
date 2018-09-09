@@ -1,11 +1,17 @@
 package pennappsf18.mega.collaboraid;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+
+import java.io.File;
 
 public class AddMedicalIssueActivity extends AppCompatActivity {
 
@@ -25,6 +31,10 @@ public class AddMedicalIssueActivity extends AppCompatActivity {
         ft.commit();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
     @Override
     public void onBackPressed() {
@@ -44,6 +54,7 @@ public class AddMedicalIssueActivity extends AppCompatActivity {
     public void iUnderstand(View v){
         previousFragment = "DisclaimerFragment";
         Fragment fragment = new AddMedicalIssueFragment();
+
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.add_medical_issue_frame, fragment);
         ft.commit();
