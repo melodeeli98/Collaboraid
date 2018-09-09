@@ -4,23 +4,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="Home" />
         <item
             android:id="@+id/nav_add_medical_issue"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_add_black_24dp"
             android:title="Add Medical Issue" />
         <item
             android:id="@+id/nav_my_medical_issues"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_pencil_black_24dp"
             android:title="My Medical Issues" />
         <item
             android:id="@+id/nav_people_in_need"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_public_black_24dp"
             android:title="People In Need" />
         <item
             android:id="@+id/nav_found_person"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_my_location_black_24dp"
             android:title="Found Missing Person?" />
 
     </group>
@@ -29,7 +29,7 @@
         <menu>
             <item
                 android:id="@+id/nav_sign_in"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_stethoscope"
                 android:title="Sign In / Register" />
         </menu>
     </item>
