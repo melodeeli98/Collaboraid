@@ -84,7 +84,9 @@ public class MainActivity extends AppCompatActivity
         }
 
         else if (item.getItemId() == R.id.nav_sign_in) {
-            // TODO
+            startActivity(new Intent(MainActivity.this, DoctorLoginActivity.class));
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
         }
 
         else displaySelectedScreen(item.getItemId());
