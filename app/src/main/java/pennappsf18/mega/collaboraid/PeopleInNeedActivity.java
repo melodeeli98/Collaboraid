@@ -24,12 +24,12 @@ public class PeopleInNeedActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         CaseFragment.OnListFragmentInteractionListener onSelect = new CaseFragment.OnListFragmentInteractionListener() {
             @Override
-            public void onListFragmentInteraction(DummyContent.DummyItem item) {
+            public void onListFragmentInteraction(Document doc) {
 
             }
         };
 
-        mAdapter = new MyCaseRecyclerViewAdapter(DummyContent.ITEMS, onSelect);
+        mAdapter = new MyCaseRecyclerViewAdapter(MainActivity.docs, onSelect);
         mRecyclerView.setAdapter(mAdapter);
     }
 }

@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import pennappsf18.mega.collaboraid.CaseFragment.OnListFragmentInteractionListener;
@@ -18,10 +19,10 @@ import java.util.List;
  */
 public class MyCaseRecyclerViewAdapter extends RecyclerView.Adapter<MyCaseRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final List<Document> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyCaseRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public MyCaseRecyclerViewAdapter(List<Document> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -36,8 +37,9 @@ public class MyCaseRecyclerViewAdapter extends RecyclerView.Adapter<MyCaseRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mIdView.setText(mValues.get(position).mShort_desc);
+        holder.mContentView.setText(mValues.get(position).mLong_desc);
+        holder.mImView.setImageBitmap(mValues.get(position).mImg);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,13 +62,15 @@ public class MyCaseRecyclerViewAdapter extends RecyclerView.Adapter<MyCaseRecycl
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public DummyItem mItem;
+        public final ImageView mImView;
+        public Document mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
             mIdView = (TextView) view.findViewById(R.id.item_number);
             mContentView = (TextView) view.findViewById(R.id.content);
+            mImView = (ImageView) view.findViewById(R.id.img);
         }
 
         @Override

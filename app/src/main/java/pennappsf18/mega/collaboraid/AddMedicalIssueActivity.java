@@ -2,6 +2,8 @@ package pennappsf18.mega.collaboraid;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
@@ -10,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.io.File;
 
@@ -65,3 +68,8 @@ public class AddMedicalIssueActivity extends AppCompatActivity {
         return;
     }
 }
+/*
+    ImageView imageView = (ImageView) findViewById(R.id.imageView);
+    Bitmap bm = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
+        MainActivity.docs.add(new Document("Joe Gonzales", "Old","Male", "Short description", "Long description", bm, "True" ));
+        */

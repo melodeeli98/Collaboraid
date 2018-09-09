@@ -69,7 +69,7 @@ public class CaseFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyCaseRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyCaseRecyclerViewAdapter(MainActivity.docs, mListener));
         }
         return view;
     }
@@ -104,6 +104,6 @@ public class CaseFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Document item);
     }
 }
