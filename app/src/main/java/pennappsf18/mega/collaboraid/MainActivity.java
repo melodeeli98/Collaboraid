@@ -83,10 +83,6 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         }
 
-        else if (item.getItemId() == R.id.nav_found_person) {
-            // TODO
-        }
-
         else if (item.getItemId() == R.id.nav_sign_in) {
             // TODO
         }
