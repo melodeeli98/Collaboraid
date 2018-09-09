@@ -49,6 +49,7 @@
                 android:inputType="textMultiLine" />
 
             <RadioGroup
+                android:id="@+id/Age"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp">
@@ -115,6 +116,7 @@
             </RadioGroup>
 
             <RadioGroup
+                android:id="@+id/Sex"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp">
@@ -158,6 +160,7 @@
             </RadioGroup>
 
             <RadioGroup
+                android:id="@+id/Urgent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp">
