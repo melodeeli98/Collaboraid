@@ -33,6 +33,6 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_doctor_register">DoctorRegisterActivity</string>
+    <string name="title_activity_doctor_register">Register As A Doctor</string>
 
 </resources>

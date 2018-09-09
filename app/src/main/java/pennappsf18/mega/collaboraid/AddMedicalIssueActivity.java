@@ -6,13 +6,17 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.constraint.solver.widgets.ResolutionDimension;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.io.File;
 
@@ -64,6 +68,34 @@ public class AddMedicalIssueActivity extends AppCompatActivity {
     }
 
     public void submit(View v) {
+        EditText name = findViewById(R.id.editText);
+        String nameStr = name.getText().toString();
+        EditText shortDesc = findViewById(R.id.editText1);
+        String shortDescStr = shortDesc.getText().toString();
+        EditText longDesc = findViewById(R.id.editText2);
+        String longDescStr = longDesc.getText().toString();
+
+        RadioGroup ageRange = findViewById(R.id.Age);
+        int ageRangeId = ageRange.getCheckedRadioButtonId();
+        RadioButton ageRangeBtn = (RadioButton) findViewById(ageRangeId);
+        String ageRangeStr = ageRangeBtn.getText().toString();
+
+        RadioGroup sex = findViewById(R.id.Sex);
+        int sexId = sex.getCheckedRadioButtonId();
+        RadioButton sexBtn = (RadioButton) findViewById(sexId);
+        String sexStr = sexBtn.getText().toString();
+
+        RadioGroup urgent = findViewById(R.id.Urgent);
+        int urgentId = urgent.getCheckedRadioButtonId();
+        RadioButton urgentBtn = (RadioButton) findViewById(urgentId);
+        String urgentStr = urgentBtn.getText().toString();
+
+        ImageView imageView = findViewById(R.id.imageView);
+        Bitmap bm = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
+        
+        MainActivity.docs.add(new Document(nameStr, ageRangeStr, sexStr, shortDescStr,
+                longDescStr, bm, urgentStr));
+
         super.onBackPressed();
         return;
     }

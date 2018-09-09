@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,6 +16,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -63,6 +71,40 @@ public class AddMedicalIssueFragment extends Fragment {
                         byteArray.length);
 
                 imageView.setImageBitmap(bitmap);
+
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                // Create a storage reference from our app
+                StorageReference storageRef = storage.getReferenceFromUrl("gs://collaboraid-edeba.appspot.com");
+                //Create a reference to "imageRef.jpg"
+                StorageReference imageRef = storageRef.child("imageRef.jpg");
+                // Create a reference to 'images/imageRef.jpg'
+                StorageReference ImagesRef = storageRef.child("images/imageRef.jpg");
+                // While the file names are the same, the references point to different files
+                imageRef.getName().equals(ImagesRef.getName());    // true
+                imageRef.getPath().equals(ImagesRef.getPath());    // false
+
+                // Get the data from an ImageView as bytes
+
+                imageView.setDrawingCacheEnabled(true);
+                imageView.buildDrawingCache();
+                Bitmap btmp = imageView.getDrawingCache();
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                btmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                byte[] info = baos.toByteArray();
+
+                UploadTask uploadTask = imageRef.putBytes(info);
+                uploadTask.addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle unsuccessful uploads
+                    }
+                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                    }
+                });
             }
         }
     }
