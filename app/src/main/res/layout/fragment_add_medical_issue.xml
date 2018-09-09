@@ -28,25 +28,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Name of Injured Person (if known)" />
+                android:hint="Name of Injured Person (if known)"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/editText1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="Title of Medical Issue"
                 android:inputType="textShortMessage"
-                android:paddingTop="10dp"
-                android:hint="Title of Medical Issue" />
+                android:paddingTop="10dp" />
 
             <EditText
                 android:id="@+id/editText2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textMultiLine"
-                android:hint="Description" />
+                android:hint="Description"
+                android:inputType="textMultiLine" />
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Child" />
+                            android:text="Infant/Child" />
 
                         <RadioButton
                             android:id="@+id/radioButton1"
@@ -203,25 +203,24 @@
                 android:text="Please upload a photo of the medical issue."
                 android:textSize="18sp" />
 
-            <LinearLayout
+            <ImageButton
+                android:id="@+id/picbutton_id"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="100dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_add_a_photo_black_24dp"
+                tools:layout_editor_absoluteX="59dp"
+                tools:layout_editor_absoluteY="484dp" />
 
-                <ImageButton
-                    android:id="@+id/picbutton_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_add_a_photo_black_24dp" />
-
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_menu_gallery" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_weight="1" />
 
         </LinearLayout>
     </ScrollView>
@@ -234,7 +233,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Button"
+        android:text="Submit"
+        android:onClick="submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/scrollView2"
         app:layout_constraintStart_toStartOf="@+id/scrollView2"

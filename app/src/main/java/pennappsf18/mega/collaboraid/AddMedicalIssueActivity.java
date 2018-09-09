@@ -60,5 +60,8 @@ public class AddMedicalIssueActivity extends AppCompatActivity {
         ft.commit();
     }
 
-
+    public void submit(View v) {
+        super.onBackPressed();
+        return;
+    }
 }
