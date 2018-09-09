@@ -20,7 +20,7 @@ public class AddMedicalIssueActivity extends AppCompatActivity {
     }
 
     public void iUnderstand(View v){
-        Fragment fragment = new MyMedicalIssuesFragment();
+        Fragment fragment = new AddMedicalIssue2Fragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.add_medical_issue_frame, fragment);
         ft.commit();
