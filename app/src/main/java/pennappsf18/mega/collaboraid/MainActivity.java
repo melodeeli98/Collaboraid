@@ -13,12 +13,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity
         implements
         NavigationView.OnNavigationItemSelectedListener {
 
     public static int numPeopleWaiting = 10;
     public static int estimatedWaitTime = 5;
+    public static List<Document> docs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
