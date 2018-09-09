@@ -71,14 +71,14 @@ public class DoctorRegisterActivity extends AppCompatActivity {
         EditText passwordConfirmation = (EditText)findViewById(R.id.password1);
         String passwordString = password.getText().toString();
         String passwordConfirmationString = passwordConfirmation.getText().toString();
-        if (passwordString == passwordConfirmationString) {
-            super.onBackPressed();
+        if (passwordString.equals(passwordConfirmationString)) {
+            startActivity(new Intent(DoctorRegisterActivity.this, MainActivity.class));
             return;
         }
         else {
-            //Snackbar snackbar = Snackbar
-            //        .make(v, "Passwords do not match!", Snackbar.LENGTH_LONG);
-            //snackbar.show();
+            Snackbar snackbar = Snackbar
+                    .make(v, "Passwords do not match!", Snackbar.LENGTH_LONG);
+            snackbar.show();
         }
     }
 
