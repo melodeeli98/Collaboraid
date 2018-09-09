@@ -1,5 +1,6 @@
 package pennappsf18.mega.collaboraid;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -11,12 +12,14 @@ public class AddMedicalIssueActivity extends AppCompatActivity {
     private static String previousFragment;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(false);
         previousFragment = "";
         setContentView(R.layout.activity_add_medical_issue);
 
-        Fragment fragment = new AddMedicalIssueActivityFragment();
+        Fragment fragment = new DisclaimerFragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.add_medical_issue_frame, fragment);
         ft.commit();
@@ -26,8 +29,9 @@ public class AddMedicalIssueActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Fragment fragment = null;
-        if ("MyMedicalIssuesFragment".equals(previousFragment)){
-            fragment = new MyMedicalIssuesFragment();
+        if ("DisclaimerFragment".equals(previousFragment)){
+            fragment = new DisclaimerFragment();
+            previousFragment = "";
         } else {
             super.onBackPressed();
             return;
@@ -38,7 +42,8 @@ public class AddMedicalIssueActivity extends AppCompatActivity {
     }
 
     public void iUnderstand(View v){
-        Fragment fragment = new AddMedicalIssue2Fragment();
+        previousFragment = "DisclaimerFragment";
+        Fragment fragment = new AddMedicalIssueFragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.add_medical_issue_frame, fragment);
         ft.commit();

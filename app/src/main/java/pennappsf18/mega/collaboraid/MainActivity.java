@@ -89,6 +89,8 @@ public class MainActivity extends AppCompatActivity
 
         if (item.getItemId() == R.id.nav_add_medical_issue) {
             startActivity(new Intent(MainActivity.this, AddMedicalIssueActivity.class));
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
         }
 
         else if (item.getItemId() == R.id.nav_found_person) {
